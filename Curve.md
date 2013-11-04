@@ -2,7 +2,7 @@
 
 `<r0>` `<r1>` `<n>` `<a0>` `<a1>` `<t>` `<r2>` `<r3>` `<s>` `<id>` `<od>` `<h>` `<ct>`
 
-Curve is a program designed to create rounded structures which can be imported directly into NetRadiant. These structures are aligned to the 1-unit grid, as that is the Neverball standard.
+Curve is a program designed to create rounded structures which can be imported directly into Radiant. These structures are aligned to the 1-unit grid, as that is the Neverball standard.
 
 ##Methods of Usage
 
@@ -47,7 +47,7 @@ This creates the file textures.txt which can be easily edited to specify texture
 This method creates a random curve. Additionally, you may specify a second command line option ”-lots”, to generate a single file containing 16 random curves(i.e. curve -random -lots > filename). Disclaimer: Not all of the generated curves will be useful, but hopefully will serve as inspiration in level design.
 
 ##Parameters List
-In the following sections, each parameter will be explained in depth, with picture examples taken straight from the editing windows in GtkRadiant. Each picture has a caption with the exact parameters that were used to create each curve. Each file that is output by curve contains a comment header with the exact parameters used to create that curve. Simply open the file in a text editor to view the header (see this note about the header.)
+In the following sections, each parameter will be explained in depth, with picture examples taken straight from the editing windows in Radiant. Each picture has a caption with the exact parameters that were used to create each curve. Each file that is output by curve contains a comment header with the exact parameters used to create that curve. Simply open the file in a text editor to view the header (see this note about the header.)
 
 ###Quick reference
 
@@ -94,7 +94,7 @@ In the following sections, each parameter will be explained in depth, with pictu
 
 ###r0 - Starting Inner Radius
 
-The inner radius can be any number, including zero. Zero would be useful if you are planning on creating a “disc” shape that is solid. (After importing such a “disc”, you can use the CSG Merge function in GtkRadiant to merge the sections into a single lump). Certain advanced curves may experience small(easily corrected) glitches when the inner radius is zero.
+The inner radius can be any number, including zero. Zero would be useful if you are planning on creating a “disc” shape that is solid. (After importing such a “disc”, you can use the CSG Merge function in Radiant to merge the sections into a single lump). Certain advanced curves may experience small(easily corrected) glitches when the inner radius is zero.
 
 `curve 128 256 16 0 180`
 
@@ -127,7 +127,7 @@ The outer radius can be any number as long as it is at least 1 unit larger than 
 
 ###n - Number of Lumps
 
-The number of lumps specified here will be the number of “sections” that your curve will be divided into. Therefore, a low <n> will produce a coarse curve, while a high `<n>` will produce a smoother curve.
+The number of lumps specified here will be the number of “sections” that your curve will be divided into. Therefore, a low `<n>` will produce a coarse curve, while a high `<n>` will produce a smoother curve.
 
 `curve 128 192 7 0 180`
 
@@ -137,7 +137,7 @@ The number of lumps specified here will be the number of “sections” that you
 
 ![curve 128 192 24 0 180](img/curve/curve7.jpg)
 
-It is important to note that using any of the so called “Advanced Curve Settings“ (`<s>` `<id>` `<od>` `<h>`) will double the number of lumps that you specify here. This is due to each lump being cut into two triangular pieces, necessary for it to work correctly in both GtkRadiant and Neverball. Please note that when using advanced curve settings, it is possible to specify a number of lumps that is too high, resulting in a bumpy,coarse surface (due to alignment on the 1 unit grid), when what you wanted was a smooth one. If you find that your advanced curve/spiral/sloped curve,etc. is rougher than you wanted it to be, try a lower number of lumps – this can smooth things out.
+It is important to note that using any of the so called “Advanced Curve Settings“ (`<s>` `<id>` `<od>` `<h>`) will double the number of lumps that you specify here. This is due to each lump being cut into two triangular pieces, necessary for it to work correctly in both Radiant and Neverball. Please note that when using advanced curve settings, it is possible to specify a number of lumps that is too high, resulting in a bumpy,coarse surface (due to alignment on the 1 unit grid), when what you wanted was a smooth one. If you find that your advanced curve/spiral/sloped curve,etc. is rougher than you wanted it to be, try a lower number of lumps – this can smooth things out.
 
 `curve 96 128 16 0 90 16 96 128 64` _This ends up much smoother in-game, with less lumps_
 
@@ -181,7 +181,7 @@ The ending angle can be any figure as well, again expressed in degrees(360 is fu
 	 	 
 ###t - Thickness
 
-The thickness of the curve is expressed in radiant units, and the default is 16 – a common height for a platform. You may specify any number for <t> as long as it is at least 1 unit. Thickness of a curve is easily adjusted in GtkRadiant. This number plays a more important role when creating "advanced" curves, especially ones that use `<id>`, `<od>` or `<h>`).
+The thickness of the curve is expressed in radiant units, and the default is 16 – a common height for a platform. You may specify any number for <t> as long as it is at least 1 unit. Thickness of a curve is easily adjusted in Radiant. This number plays a more important role when creating "advanced" curves, especially ones that use `<id>`, `<od>` or `<h>`).
 
 `curve 64 128 16 0 90 8`
 
@@ -219,14 +219,15 @@ The ending outer radius can be any number as long as it is greater than the endi
 
 ![curve 64 128 16 0 225 16 64 256](img/curve/curve22.jpg)
 
-`curve 128 256 24 0 180 16 16 48` _doubled and rotated in NetRadiant_
+`curve 128 256 24 0 180 16 16 48` _doubled and rotated in Radiant_
+
 ![curve 128 256 24 0 180 16 16 48](img/curve/curve23.jpg)
 
 ##Advanced Curve Settings
 
 ###s - Slope
 
-The slope specifies the total number of units to change vertically between the beginning and end of the curve. It can be any number, including zero, and negative numbers (which will move “down” from the beginning to the end). Why zero? Two reasons: First, you might want to only use some of the other advanced settings, `<id>`, `<od>` or `<h>`, but not have a slope. Second, if you plan on rotating your curve in an unusual way in GtkRadiant, it might be advantageous to have it split into more pieces (with the doubled number of lumps `<n>`), so it can be aligned to the 1 unit grid more easily after rotation. If you specify *anything* for the slope, you can count on having the `<n>` doubled. It is also worthy of note that while you can specify any value for the slope `<s>` that you wish, and you will get a nice smooth ascent(or descent) - for perfect results, make the value for `<s>` be a multiple of the number of lumps `<n>`. (e.g. Slope of 80 will be a little smoother vertically with 20 lumps than with 24.)
+The slope specifies the total number of units to change vertically between the beginning and end of the curve. It can be any number, including zero, and negative numbers (which will move “down” from the beginning to the end). Why zero? Two reasons: First, you might want to only use some of the other advanced settings, `<id>`, `<od>` or `<h>`, but not have a slope. Second, if you plan on rotating your curve in an unusual way in Radiant, it might be advantageous to have it split into more pieces (with the doubled number of lumps `<n>`), so it can be aligned to the 1 unit grid more easily after rotation. If you specify *anything* for the slope, you can count on having the `<n>` doubled. It is also worthy of note that while you can specify any value for the slope `<s>` that you wish, and you will get a nice smooth ascent(or descent) - for perfect results, make the value for `<s>` be a multiple of the number of lumps `<n>`. (e.g. Slope of 80 will be a little smoother vertically with 20 lumps than with 24.)
 
 `curve 128 192 12 90 180 16 128 192 64`
 
@@ -236,7 +237,7 @@ The slope specifies the total number of units to change vertically between the b
 
 ![curve 384 512 64 0 1080 16 128 160 256](img/curve/curve25.jpg)
 
-`curve 512 520 32 0 360 256 512 520 320` _rotated 90 deg. on the Y-axis in NetRadiant for a loop-de-loop_
+`curve 512 520 32 0 360 256 512 520 320` _rotated 90 deg. on the Y-axis in Radiant for a loop-de-loop_
 
 ![curve 512 520 32 0 360 256 512 520 320](img/curve/curve26.jpg)
 
@@ -276,7 +277,7 @@ The hill value specifies the amount to drop the top level of the ends of the cur
 
 ![curve 128 256 16 0 180 64 128 256 0 0 0 48](img/curve/curve32.jpg)
 
-`curve 96 192 24 0 180 128 96 192 0 0 0 112` _cut in half, then copied and pasted in NetRadiant_
+`curve 96 192 24 0 180 128 96 192 0 0 0 112` _cut in half, then copied and pasted in Radiant_
 
 ![curve 96 192 24 0 180 128 96 192 0 0 0 112](img/curve/curve33.jpg)
 
@@ -286,7 +287,7 @@ The hill value specifies the amount to drop the top level of the ends of the cur
 
 ###ct - Constant Thickness
 
-The default for constant thickness `<ct>` is 1, which means on. You can specify 0 to turn it off. Its default function is to compensate for the `<id>`, `<od>` , and hill <h> values, so that you can have a curve that has a constant thickness from beginning to end, even when it is angled, or hill shaped. It could be desirable to have an angled curve or hill where the thickness is not adjusted.
+The default for constant thickness `<ct>` is 1, which means on. You can specify 0 to turn it off. Its default function is to compensate for the `<id>`, `<od>` , and hill `<h>` values, so that you can have a curve that has a constant thickness from beginning to end, even when it is angled, or hill shaped. It could be desirable to have an angled curve or hill where the thickness is not adjusted.
 
 `curve 128 256 8 0 90 48 128 256 0 32 0 0 0`
 
@@ -311,7 +312,7 @@ If the textures.txt file is not present (in the same directory as curve.exe), al
 
 The textures for the hidden faces, which should be invisible, are always set to the invisible texture.
 
-The beginning and end sections of the curve will have an invisible face. This is the default behavior, since most curves will be placed next to other structures in the level. If you wish a texture on those faces, it is easy to select them in NetRadiant and apply one.
+The beginning and end sections of the curve will have an invisible face. This is the default behavior, since most curves will be placed next to other structures in the level. If you wish a texture on those faces, it is easy to select them in Radiant and apply one.
 
 ##Header
 
@@ -329,11 +330,11 @@ However, if you re-input those exact numbers, you will end up with a curve that 
 
 Therefore, please be aware of the issue that a simple curve does not need to have all of the parameters entered from the header to recreate it, and that it could be potentially undesirable to do so.
 
-##NetRadiant Map Importing and Caching
+##Radiant Map Importing and Caching
 
-Some versions, perhaps all, of NetRadiant will create a copy of imported .map files in memory. This only becomes a problem if you are trying to fine-tune a curve, and decide to over-write an existing .map file. If you import a .map into GtkRadiant, over-write the .map, and then try to import it again right away, you will get exactly the same .map that imported the first time. The curve program really has overwritten the .map with your new curve, but NetRadiant has somehow cached the first version of it.
+Some versions, perhaps all, of Radiant will create a copy of imported .map files in memory. This only becomes a problem if you are trying to fine-tune a curve, and decide to over-write an existing .map file. If you import a .map into Radiant, over-write the .map, and then try to import it again right away, you will get exactly the same .map that imported the first time. The curve program really has overwritten the .map with your new curve, but Radiant has somehow cached the first version of it.
 
-- **Solution 1**: Close your currently open map in NetRadiant, and then re-open it. This somehow “resets” the caching behavior, and you can correctly import your new curve.
+- **Solution 1**: Close your currently open map in Radiant, and then re-open it. This somehow “resets” the caching behavior, and you can correctly import your new curve.
 
 - **Solution 2**: Give each curve a unique filename upon creation. You might try a xx-1, xx-2 approach to naming the curves – that way, you know the order in which they were created, and can reload an older version of your curve, if you change your mind about your latest version.
 
