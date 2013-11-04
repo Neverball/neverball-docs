@@ -70,10 +70,10 @@ In the following sections, each parameter will be explained in depth, with pictu
 <tr><td>t</td><td>thickness of curve</td>
 </tr>
 <tr>
-<td>r2</td><td>ending inner radius (can be >,<, or = r0)</td>
+<td>r2</td><td>ending inner radius (can be &gt;,&lt; or equal to r0)</td>
 </tr>
 <tr>
-<td>r3</td><td>ending outer radius (can be >,<, or = r1)</td>
+<td>r3</td><td>ending outer radius (can be &gt;,&lt;, or equal to r1)</td>
 </tr>
 <tr>
 <td>s</td><td>vertical slope from beginning to end</td>
@@ -336,6 +336,6 @@ Some versions, perhaps all, of Radiant will create a copy of imported .map files
 
 - **Solution 1**: Close your currently open map in Radiant, and then re-open it. This somehow “resets” the caching behavior, and you can correctly import your new curve.
 
-- **Solution 2**: Give each curve a unique filename upon creation. You might try a xx-1, xx-2 approach to naming the curves – that way, you know the order in which they were created, and can reload an older version of your curve, if you change your mind about your latest version.
+- **Solution 2**: Give each curve a unique filename upon creation. You might try a xx-1, xx-2 approach to naming the curves – that way, you know the order in which they were created, and can reload an older version of your curve if you change your mind about your latest version.
 
-Please be aware of this behavior when importing your curves, to avoid unnecessary confusion.
+Be aware of this behavior when importing your curves to avoid unnecessary confusion.
