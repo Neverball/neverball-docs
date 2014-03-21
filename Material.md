@@ -6,13 +6,14 @@ Neverball uses the standard OpenGL lighting model rather than a script-based sha
 
 2. Create a material file in mtrl/, in this case mtrl/wood. This name must match the texture name, minus the image suffix. The file must contain 18 values, explained below. If you don't care about the material properties, the following values suffice in most any case.
 
-
-    1.0 1.0 1.0 1.0
-    1.0 1.0 1.0 1.0
-    0.2 0.2 0.2 1.0
-    0.0 0.0 0.0 1.0
-    0.0
-    1
+```
+1.0 1.0 1.0 1.0
+1.0 1.0 1.0 1.0
+0.2 0.2 0.2 1.0
+0.0 0.0 0.0 1.0
+0.0
+1
+```
 
 Do a "Flush & Reload Shaders" in radiant and your new material should appear among the mtrl shaders.
 
