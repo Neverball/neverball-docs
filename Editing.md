@@ -70,13 +70,13 @@ There are a number of occasions where you'll want to apply one texture over-top 
 
 To accomplish this, we apply the decal texture just above the base texture using a second lump. Mark the top of this lump with the decal texture and mark the other 5 sides with the invisible texture.
 
-Position the decal lump 1 unit above the base lump. Do not position the top of the decal lump coincident with the base lump, as this will cause Z-fighting.
+It is convenient to position the decal lump 1 unit above the base lump for purposes of aligning and scaling the decal texture. You may then position the top of the decal lump coincident with the base lump, as this will no longer cause Z-fighting, as it did in earlier versions of Neverball ( < 1.5 ).
 
-Very important: mark the decal lump as detail using the “Make Detail” menu item. If the decal lump is allowed to be structural then the ball will bump into it, as it is 1/64th of a meter from the floor.
+**Important**: Mark the decal lump as detail using the “Make Detail” menu item.
 
 ![](img/decal1.png)  ![](img/decal2.png)
 
-This is a decal lump by itself, and the same decal lump with the surface lump to which it is applied.
+This is a decal lump by itself, and the same decal lump with the surface lump to which it is applied (offset 1 unit for visibility).
 
 ##Mitering
 
