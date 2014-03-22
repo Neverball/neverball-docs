@@ -25,17 +25,18 @@ Brushes are handled primarily with the mouse buttons, see below in the [Shortcut
 
 ##Editing Brushes
 
-Reshape brushes (blocks) with the clipper tool (xyz icon). This cuts sections off the brushes to form non-rectangular shapes.
+Reshape brushes (blocks) with the clipper tool (xyz icon). This truncates brushes, helpful when forming non-rectangular shapes.
 
 Manipulate brushes by moving edges or vertices:
+
   * Press E to modify the edges, click and drag points to move the edges.
   * Press V to modify the vertices, as described above.
 
-In Radiant, you cannot create concaves brushes.
+Radiant does not allow creation of concave brushes.
 
 Use numerical keys "1 - 9" to change grid resolution. By default, all points snap to the grid. Deactivate this feature in the "Grid" menu if desired.
 
-Rotate brushes in the menu "Selection", "Flip", "Rotate" or "Arbitrary Rotation.
+Rotate brushes in the menu "Selection", "Flip", "Rotate" or "Arbitrary Rotation".
 
 Merge two or more brushes into one (if allowed) in the menu "Selection", "CGS", "CGS Merge".
 
@@ -69,7 +70,7 @@ See [Adding Material](Material.md) section if you want create new textures.
 
 Create [entities](Entities.md) with a right click in the desired location, then select the entity name from the contextual menu.
 
-Press N to open the entities menu, and set up your entity; to add a key, type its name, its value and press enter.
+Press `N` to open the entities menu, and set up your entity; to add a key, type its name, its value and press enter.
 
 All brushes are entities of classname "worldspawn".
 
@@ -127,7 +128,7 @@ You can also have a look at the original radiant [command reference](http://web.
 
 ##Compiling maps
 
-Assume the map is named funkyball.map. Process it into a .sol with the following command. The first item specified is the input .map from gtkradiant, the second gives the location of the mtrl directory.
+Assume the map is named funkyball.map. Process it into a .sol with the following command. The first item specified is the input .map from Radiant, the second gives the location of the mtrl directory.
 
     $mapc funkyball.map ~/neverball/data
     
