@@ -2,14 +2,14 @@
 
 ##Requirements
 
-  * Neverball (yes, this really is needed ;-))
+  * Neverball installation
   * **Radiant**, the level design tool. Recommended: [NetRadiant](http://ingar.satgnu.net/gtkradiant/)
 
 ##Quake mapping / Neverball mapping
 
-For those who know everything about Quake engine mapping, you can go ahead and forget most of it. Neverball mapping has significantly fewer restrictions than Quake mapping. 
+For those familiar with Quake engine mapping, go ahead and forget most of it. Neverball mapping has significantly fewer restrictions than Quake mapping. 
 
-Some of the important differences are as follows: 
+Some important differences are as follows: 
 
   * The scale differs. In Quake there are 8 units to a foot. In Neverball there are 64 units to a meter. The default major grid in radiant marks 64 units, so meters are easy to work with. 
   * Neverball maps need not be closed. Neverball environments are generally entirely visible all of the time, so all the attention paid to visibility by Quake becomes unnecessary. Maps don't leak. 
@@ -33,7 +33,7 @@ Manipulate brushes by moving edges or vertices:
 
 In Radiant, you cannot create concaves brushes.
 
-Use numerical keys "1 - 9" to change the grid resolution. By default, all points snap to the grid. Deactivate this feature in the "Grid" menu if desired.
+Use numerical keys "1 - 9" to change grid resolution. By default, all points snap to the grid. Deactivate this feature in the "Grid" menu if desired.
 
 Rotate brushes in the menu "Selection", "Flip", "Rotate" or "Arbitrary Rotation.
 
@@ -120,7 +120,7 @@ There are many shortcuts, a few important ones:
 | :---- | :------ |
 | `Shift` + `left click` | select/deselect a brush |
 | `Ctrl + shift` + `left click` | select a face in 3D view |
-| `Ctrl` + `shift` + `alt` + `left click` | select/deselect several faces in 3D view |
+| `Ctrl + shift + alt` + `left click` | select/deselect several faces in 3D view |
 
 
 You can also have a look at the original radiant [command reference](http://web.archive.org/web/20090620063403/http://zerowing.idsoftware.com/files/radiant/docs/1.5/commands.html) or [Shortcut keys and mouse functions of GTKRadiant](http://icculus.org/gtkradiant/documentation/q3radiant_manual/appndx/sskey_dl.htm)
@@ -156,11 +156,11 @@ Neverball levels are organized into sets which are defined in .txt files in the 
 
 ###Set File
 
-The set file works differently in 1.5.4 and later than in the earlier versions.
+The set file works differently in 1.5.4 and later than in earlier versions.
 
 ####For 1.5.4
 
-You have a file called "sets.txt". It may be refered to as the "master set file" as it links to all the other sets.
+You have a file called "sets.txt". It may be referred to as the "master set file" as it links to all the other sets.
 
 It contains one line each containing a link to an existing set file. A new set may be established simply by making a new set file and typing it full name in the master set file.
 
