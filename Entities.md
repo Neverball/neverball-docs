@@ -93,6 +93,8 @@ The “invisible” attribute determines the visibility of the switch. It can be
 
 The info_player_intermission entity defines the camera position at the beginning of a level fly-in. The “origin” attribute gives the location, and the “target” attribute refers to the target_position defining the view direction.
 
+NOTE: A Neverputt map should contain two info_player_intermission entities. The first one defines the fly-in when a level begins. The second is only used for the fly-by on the main menu. The same target_position may be used for both, but it's better if each has its own. In general, the first info_player_intermission should show a broad overview of the entire map. The second one should show some interesting aspect of the map in detail. The order in which these two info_player_intermission entities appear in the entities list (and consequently in the .map file) determines which is used for the fly-in.
+
 ##target_position
 
 The target_position entity defines the initial view direction of a level fly-in, as well as the destination of a teleporter. The “origin” attribute gives the location.
