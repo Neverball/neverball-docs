@@ -2,7 +2,7 @@
 
 Neverball uses the standard OpenGL lighting model rather than a script-based shading system like Quake's. So, to add a new material you must create both a texture image and an OpenGL material specification. 
 
-1. The texture must be an image in either JPG or PNG format. In general, use PNG for images that require an alpha channel, and JPG otherwise. Image width and height must both be powers of two. For this discussion, let us assume you have an image named wood.jpg. Place in it `textures/mtrl/`. 
+1. The texture must be an image in either JPG or PNG format. In general, use PNG for images that require an alpha channel, and JPG otherwise. Image width and height must both be powers of two. For this discussion, let us assume you have an image named `wood.jpg`. Place in it `textures/mtrl/`. 
 
 2. Create a material file in `textures/mtrl/`, in this case `textures/mtrl/wood`. This name must match the texture name, minus the image suffix. The file must contain a material specification, explained below. If you don't care about the material properties, the following values suffice in most any case.
 
