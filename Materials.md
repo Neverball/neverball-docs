@@ -41,8 +41,8 @@ Two additional directives are recognized when the `alpha-test` or the `semi-opaq
 Flag          | Description
 --------------|------------
 `additive`    | Additively blended material
-`clamp-s`     | Material texture is clamped horizontally
-`clamp-t`     | Material texture is clamped vertically
+`clamp-s`     | Material texture is non-repeating horizontally
+`clamp-t`     | Material texture is non-repeating vertically
 `decal`       | Surface decals are automatically offset from the base surface
 `environment` | Environment-mapped material
 `reflective`  | Reflective material
