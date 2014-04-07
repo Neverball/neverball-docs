@@ -16,7 +16,7 @@ flags     shadowed
 angle     45.0
 ```
 
-Do a "Flush & Reload Shaders" in Radiant and your new material should appear among the mtrl shaders.
+Do a "Flush & Reload Shaders" in Radiant and your new material should appear among the mtrl shaders. Use the F7 key in Neverball to reload materials from material files without having to recompile your map.
 
 Those directives define the material in terms of the standard OpenGL material model. They define not only the color of the material, but how it reacts to different types of lighting and different points of view. Their meaning is a follows: 
 
