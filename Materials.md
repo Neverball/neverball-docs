@@ -30,7 +30,7 @@ The five of these together determine the base color of the material. This base c
 
 * `flags` gives the material flags. Multiple flags may be specified, separated by spaces. The recognized material flags are enumerated below.
 * `angle` gives the cutoff angle for lump smoothing. Surfaces of the same material that share an edge with a crease angle below this value will have their surface normals adjusted for lighting computations, making the surface transition appear smoother. A value of 0 will disable lump smoothing.
-* `alpha-test <func> <value>` turns on alpha testing and gives a comparison function and a value to compare against. Pixels with with alpha value that fail the comparison are not rendered. For example, `alpha-test gequal 0.5` only renders pixels with alpha value greater or equal to 0.5. All of the standard comparison functions are available: `always`, `equal`, `gequal`, `greater`, `lequal`, `less`, `never`, `notequal`.
+* `alpha-test <func> <value>` turns on alpha testing and gives a comparison function and a value to compare against. Pixels with an alpha value that fails the comparison are not rendered. For example, `alpha-test gequal 0.5` only renders pixels with alpha value greater or equal to 0.5. All of the standard comparison functions are available: `always`, `equal`, `gequal`, `greater`, `lequal`, `less`, `never`, `notequal`.
 
 ## Material Flags
 
