@@ -4,3 +4,4 @@ Herein lies the mapping documentation for Neverball. This is still very much a w
 
 * [Setting up the environment](Setup.md)
 * [Adding new materials](Materials.md)
+* [Adding curved geometry to your level](Curve.md)
