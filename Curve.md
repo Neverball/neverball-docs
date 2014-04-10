@@ -16,23 +16,23 @@
 
 Curve is a program designed to create rounded structures which can be imported directly into Radiant. These structures are aligned to the 1-unit grid, as that is the Neverball standard.
 
-##Methods of Usage
+## Methods of Usage
 
 There are six ways to use the curve program:
 
-####Output basic usage instructions
+### Output basic usage instructions
 
     curve -?
 
 This will display on-screen a quick list of parameters with brief descriptions of the purpose for each parameter.
 
-####Output detailed usage instructions
+### Output detailed usage instructions
 
     curve -readme
 
 This outputs detailed instructions to the file readme.txt. This option is somewhat obsolete in light of this document, which goes into even greater detail, as well as supplying pictures to illustrate the effects of different settings.
 
-####Command line arguments method
+### Command line arguments method
 
     curve <r0> <r1> <n> <a0> . . . > filename
 
@@ -40,69 +40,44 @@ This is the “classic” style of using curve. The user will enter a series of 
 
 Example: `curve 256 272 64 0 720 256 8 48 384 0 0 192 1 > mycurve.map`
 
-####Interactive method: no parameters
+### Interactive method: no parameters
 
     curve
 
 This method involves the user answering a series of questions about the curve that should be generated. At any point, the user may input a question mark ( ? ) in order to receive help concerning that particular setting. This method is preferable for users who dislike the ambiguity and potential confusion of such a long string of numbers as demonstrated in the example above.
 
-####Generate file for auto-texturing of curves
+### Generate file for auto-texturing of curves
 
     curve -textures
 
 This creates the file textures.txt which can be easily edited to specify textures to apply to the subsequently generated curves. Please see the Texturing section for more detail.
 
-####Random curve generation
+### Random curve generation
 
     curve -random > filename
     
 This method creates a random curve. Additionally, you may specify a second command line option ”-lots”, to generate a single file containing 16 random curves(i.e. curve -random -lots > filename). Disclaimer: Not all of the generated curves will be useful, but hopefully will serve as inspiration in level design.
 
-##Parameters List
+## Parameters List
 In the following sections, each parameter will be explained in depth, with picture examples taken straight from the editing windows in Radiant. Each picture has a caption with the exact parameters that were used to create each curve. Each file that is output by curve contains a comment header with the exact parameters used to create that curve. Simply open the file in a text editor to view the header (see this note about the header.)
 
-###Quick reference
+### Quick reference
 
-<table>
-<tr>
-<td>r0</td><td>inner radius</td>
-</tr>
-<tr>
-<td>r1</td><td>outer radius</td>
-</tr>
-<tr>
-<td>n</td><td>number of lumps (will be doubled if sloped, angled, or hill-shaped)</td>
-</tr>
-<tr>
-<td>a0</td><td>beginning angle</td>
-</tr>
-<tr>
-<td>a1</td><td>ending angle</td>
-</tr>
-<tr><td>t</td><td>thickness of curve</td>
-</tr>
-<tr>
-<td>r2</td><td>ending inner radius (can be &gt;,&lt; or equal to r0)</td>
-</tr>
-<tr>
-<td>r3</td><td>ending outer radius (can be &gt;,&lt;, or equal to r1)</td>
-</tr>
-<tr>
-<td>s</td><td>vertical slope from beginning to end</td>
-</tr>
-<tr>
-<td>id</td><td>vertical drop of curve's inner radius (inward angled)</td>
-</tr>
-<tr>
-<td>od</td><td>vertical drop of curve's outer radius (outward angled)</td>
-</tr>
-<tr>
-<td>h</td><td>vertical drop for both ends of curve (hill)</td>
-</tr>
-<tr>
-<td>ct</td><td>zero will override default of constant thickness for angle/hill curves</td>
-</tr>
-</table>
+Parameter  | Description
+-----------|-------------
+[`r0`][r0] | inner radius
+[`r1`][r1] | outer radius
+[`n`][n]   | number of lumps (will be doubled if sloped, angled, or hill-shaped)
+[`a0`][a0] | beginning angle
+[`a1`][a1] | ending angle
+[`t`][t]   | thickness of curve
+[`r2`][r2] | ending inner radius (can be &gt;,&lt; or equal to r0)
+[`r3`][r3] | ending outer radius (can be &gt;,&lt;, or equal to r1)
+[`s`][s]   | vertical slope from beginning to end
+[`id`][id] | vertical drop of curve's inner radius (inward angled)
+[`od`][od] | vertical drop of curve's outer radius (outward angled)
+[`h`][h]   | vertical drop for both ends of curve (hill)
+[`ct`][ct] | zero will override default of constant thickness for angle/hill curves
 
 ### r0 - Starting Inner Radius
 [r0]: #r0---starting-inner-radius
@@ -196,7 +171,7 @@ The ending angle can be any figure as well, again expressed in degrees(360 is fu
 
 ![curve 192 256 64 0 720 16 192 256 256](img/curve/curve15.jpg)
 	 	 
-###t - Thickness
+### t - Thickness
 [t]: #t---thickness
 
 The thickness of the curve is expressed in radiant units, and the default is 16 – a common height for a platform. You may specify any number for <t> as long as it is at least 1 unit. Thickness of a curve is easily adjusted in Radiant. This number plays a more important role when creating "advanced" curves, especially ones that use `<id>`, `<od>` or `<h>`).
