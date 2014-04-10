@@ -1,6 +1,18 @@
-#Curve.c
+# Curve.c
 
-`<r0>` `<r1>` `<n>` `<a0>` `<a1>` `<t>` `<r2>` `<r3>` `<s>` `<id>` `<od>` `<h>` `<ct>`
+[`<r0>`][r0]
+[`<r1>`][r1]
+[`<n>`][n]
+[`<a0>`][a0]
+[`<a1>`][a1]
+[`<t>`][t]
+[`<r2>`][r2]
+[`<r3>`][r3]
+[`<s>`][s]
+[`<id>`][id]
+[`<od>`][od]
+[`<h>`][h]
+[`<ct>`][ct]
 
 Curve is a program designed to create rounded structures which can be imported directly into Radiant. These structures are aligned to the 1-unit grid, as that is the Neverball standard.
 
@@ -92,7 +104,8 @@ In the following sections, each parameter will be explained in depth, with pictu
 </tr>
 </table>
 
-###r0 - Starting Inner Radius
+### r0 - Starting Inner Radius
+[r0]: #r0---starting-inner-radius
 
 The inner radius can be any number, including zero. Zero would be useful if you are planning on creating a “disc” shape that is solid. (After importing such a “disc”, you can use the CSG Merge function in Radiant to merge the sections into a single lump). Certain advanced curves may experience small(easily corrected) glitches when the inner radius is zero.
 
@@ -108,7 +121,8 @@ The inner radius can be any number, including zero. Zero would be useful if you 
 
 ![curve 0 112 24 0 360 - CSG Merged](img/curve/curve2.jpg)
 
-###r1 - Starting Outer Radius
+### r1 - Starting Outer Radius
+[r1]: #r1---starting-outer-radius
 
 The outer radius can be any number as long as it is at least 1 unit larger than the inner radius [r0].
 
@@ -125,7 +139,8 @@ The outer radius can be any number as long as it is at least 1 unit larger than 
 ![curve 0 112 240 0 360 - CSG Merged](img/curve/curve5.jpg)
 
 
-###n - Number of Lumps
+### n - Number of Lumps
+[n]: #n---number-of-lumps
 
 The number of lumps specified here will be the number of “sections” that your curve will be divided into. Therefore, a low `<n>` will produce a coarse curve, while a high `<n>` will produce a smoother curve.
 
@@ -147,7 +162,8 @@ It is important to note that using any of the so called “Advanced Curve Settin
 
 ![curve 96 128 30 0 90 16 96 128 64](img/curve/curve9.jpg)
 
-###a0 - Beginning Angle
+### a0 - Beginning Angle
+[a0]: #a0---beginning-angle
 
 The beginning angle can be any figure, and is expressed in degrees(360 is full circle). It's probably best to make this a positive number – negative numbers may not behave in an expected manner, and could possibly crash the program.
 
@@ -163,7 +179,8 @@ The beginning angle can be any figure, and is expressed in degrees(360 is full c
 
 ![curve 128 256 16 90 180](img/curve/curve12.jpg)
 
-###a1 - Ending Angle
+### a1 - Ending Angle
+[a1]: #a1---ending-angle
 
 The ending angle can be any figure as well, again expressed in degrees(360 is full circle). There are no checks as to whether you enter a lower or higher number than `<a0>`, so to be safe, make it a number higher than `<a0>`. You may also go beyond 360 degrees, which can be useful when making spirals (explained further in the slope `<s>` section, under Advanced Curves)
 
@@ -180,6 +197,7 @@ The ending angle can be any figure as well, again expressed in degrees(360 is fu
 ![curve 192 256 64 0 720 16 192 256 256](img/curve/curve15.jpg)
 	 	 
 ###t - Thickness
+[t]: #t---thickness
 
 The thickness of the curve is expressed in radiant units, and the default is 16 – a common height for a platform. You may specify any number for <t> as long as it is at least 1 unit. Thickness of a curve is easily adjusted in Radiant. This number plays a more important role when creating "advanced" curves, especially ones that use `<id>`, `<od>` or `<h>`).
 
@@ -191,7 +209,8 @@ The thickness of the curve is expressed in radiant units, and the default is 16 
 
 ![curve 64 128 16 0 90 32](img/curve/curve17.jpg)	 
 
-###r2 - Ending Inner Radius
+### r2 - Ending Inner Radius
+[r2]: #r2---ending-inner-radius
 
 The ending inner radius can be any number, greater than, equal to, or less than the starting inner radius `<r0>` including zero. This can be especially useful for creating various spirals, and swirls, or creating a curve that grows wider or more narrow from one end to the other.
 
@@ -207,7 +226,8 @@ The ending inner radius can be any number, greater than, equal to, or less than 
 
 ![curve 256 288 16 0 180 16 0 32](img/curve/curve20.jpg)
 
-###r3 - Ending Outer Radius
+### r3 - Ending Outer Radius
+[r3]: #r3---ending-outer-radius
 
 The ending outer radius can be any number as long as it is greater than the ending inner radius `<r2>` by at least 1 unit. Not surprisingly, this setting is also useful when creating spirals, swirls, and curves of varying width from one end to the other.
 
@@ -223,9 +243,10 @@ The ending outer radius can be any number as long as it is greater than the endi
 
 ![curve 128 256 24 0 180 16 16 48](img/curve/curve23.jpg)
 
-##Advanced Curve Settings
+## Advanced Curve Settings
 
-###s - Slope
+### s - Slope
+[s]: #s---slope
 
 The slope specifies the total number of units to change vertically between the beginning and end of the curve. It can be any number, including zero, and negative numbers (which will move “down” from the beginning to the end). Why zero? Two reasons: First, you might want to only use some of the other advanced settings, `<id>`, `<od>` or `<h>`, but not have a slope. Second, if you plan on rotating your curve in an unusual way in Radiant, it might be advantageous to have it split into more pieces (with the doubled number of lumps `<n>`), so it can be aligned to the 1 unit grid more easily after rotation. If you specify *anything* for the slope, you can count on having the `<n>` doubled. It is also worthy of note that while you can specify any value for the slope `<s>` that you wish, and you will get a nice smooth ascent(or descent) - for perfect results, make the value for `<s>` be a multiple of the number of lumps `<n>`. (e.g. Slope of 80 will be a little smoother vertically with 20 lumps than with 24.)
 
@@ -241,7 +262,8 @@ The slope specifies the total number of units to change vertically between the b
 
 ![curve 512 520 32 0 360 256 512 520 320](img/curve/curve26.jpg)
 
-###id - Inner Drop
+### id - Inner Drop
+[id]: #id---inner-drop
 
 The inner drop parameter is how many units to drop the top level of the inside of the curve. It must be at least one unit less than the total thickness `<t>`. This figure is subtracted from the thickness parameter, and the result is that your curve will be angled inward. This option can combine nicely with hill `<h>` option, to create banked curves, similar to what you might see at a race track.
 
@@ -257,7 +279,8 @@ The inner drop parameter is how many units to drop the top level of the inside o
 
 ![curve 768 1024 80 0 900 64 256 320 -512 48](img/curve/curve29.jpg)
 
-###od - Outer Drop
+### od - Outer Drop
+[od]: #od---outer-drop
 
 The outer drop parameter is how many unit to drop the top level of the outside of the curve. Just as with the inner drop <id>, the outer drop must be at least 1 unit less than the thickness <t>of the curve. The result will be a curve which is angled outward.
 
@@ -269,7 +292,8 @@ The outer drop parameter is how many unit to drop the top level of the outside o
 
 ![curve 128 256 8 0 90 48 128 256 0 0 32 0 0](img/curve/curve31.jpg)
 
-###h - Hill
+### h - Hill
+[h]: #h---hill
 
 The hill value specifies the amount to drop the top level of the ends of the curve. The middle of the curve will be the full value of thickness <t> while the ends will have a thickness equal to `<t>` minus `<h>`. The hill curve is a sine wave, which provides for a smooth transition.
 
@@ -285,7 +309,8 @@ The hill value specifies the amount to drop the top level of the ends of the cur
 
 ![curve 512 576 64 0 720 256 128 192 160 0 0 240](img/curve/curve34.jpg)
 
-###ct - Constant Thickness
+### ct - Constant Thickness
+[ct]: #ct---constant-thickness
 
 The default for constant thickness `<ct>` is 1, which means on. You can specify 0 to turn it off. Its default function is to compensate for the `<id>`, `<od>` , and hill `<h>` values, so that you can have a curve that has a constant thickness from beginning to end, even when it is angled, or hill shaped. It could be desirable to have an angled curve or hill where the thickness is not adjusted.
 
