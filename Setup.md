@@ -1,19 +1,15 @@
-#Setup
+# Setup
 
-##Setting the level editor on Windows
+## Setting up the level editor on Windows
 
-First, you need a working copy of Neverball on your computer. I highly recommend the latest build [1] since it allows you to use rotating objects, which are not possible to show up in the last stable released version (1.5.4).
+Here's a quick guide on setting up everything you need to start making levels.
 
-Second, you need NetRadiant [2]. This program is a 3D editor that is used by all those who want to map levels for Neverball to draw geometry, paint it by using textures and add entities such as balls, switches, linkers and  so on. Installing it requires only a few steps.
+1. Grab the [latest Neverball build][nightly]. Make sure it works.
+2. Visit [Ingar's NetRadiant site][radiant], scroll down to "Downloads" and grab an appropriate NetRadiant build. Get the 32-bit build, as the 64-bit build tends to crash.
+3. Install the Neverball gamepack for Radiant: Navigate to the *NeverballPack folder* in `neverball-nightly`, select `games` and `neverball.game` and copy those two to your `netradiant` folder.
+4. Launch NetRadiant using `radiant.exe`. In the "Global Preferences" window that appears select "Neverball", then, if asked, set the engine path to the location of your `neverball-nightly` directory. (If you don't receive the prompt, you should set the engine path later, in "Edit->Preferences->Settings->Paths".) At this point Radiant should launch. If it crashes, which does happen on occasion, just start it again. You may also want to disable desktop composition in `radiant.exe` properties, which seems to resolve a few visual issues and may help with the crashes.
 
-* Download all the needed resources and extract somewhere your Neverball folder and your NetRadiant folder.
-* If you grabbed NetRadiant using the resource [2], the Neverball Pack is already included, otherwise you can find a copy of it in your Neverball installation folder. Make sure you have in your NetRadiant installation a folder named ‘neverball.game’ and in the /games folder a file named ‘neverball.game’.
-* Aero causes a few problems to the program, so you might want to turn it off. To achieve this, right click on the executable file ‘radiant.exe’ which you can find in your NetRadiant installation folder, click on ‘Properties’, switch to the ‘compatibility’ tab and check the ‘disable desktop compositions’ box.
-* In the same box, check the ‘use this program as an administrator’ box.
-* Launch radiant.exe by double-clicking on it and choose Neverball as your default game. If asked, specify your engine folder (The path that you installed Neverball in).
-* Enjoy your mapping environment!
+To confirm that things are working, at this point you can hit `Ctrl+S` to save the (currently empty) map. Make sure to save it under `Documents\My Games\Neverball-dev\`, for instance, as `Documents\My Games\Neverball-dev\Maps\empty.map`. Then, in the "Build" menu, select "Neverball: compile+play" (ignore the firewall and BSP monitoring warnings). Neverball should launch and you should arrive at a black screen that says "Standalone level", which is your completely empty map. If you get this far, everything is set up properly and you're ready to start mapping.
 
-### Resources
-
-1.     http://neverball.org/neverball-nightly.zip
-2.	http://icculus.org/neverball/netradiant-20140207.zip - https://mega.co.nz/#!1YFHhA5C!1MRgItZm3sV1IFGN7PzBZd4PoxyPrNRRsYRX70JB5_I (Mirrored by htnever)
+[nightly]: http://neverball.org/neverball-nightly.zip
+[radiant]: http://ingar.satgnu.net/gtkradiant/
