@@ -160,4 +160,4 @@ For portability, all filenames should use the "/" (forward slash) character as t
 
 ## info_null
 
-The *info_null* entity defines a billboard. Billboards are fundamental in the creation of backgrounds and are used to greatly enhance the visuals of ball skins, and they can also be used in levels.
+The *info_null* entity defines an animated billboard. Billboards are fundamental in the creation of backgrounds and ball skins, and are used to add visual details to a level. A description of *info_null* is available in the [background documentation](Backgrounds.md).
