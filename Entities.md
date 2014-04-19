@@ -79,6 +79,8 @@ To destroy a *func_train* leaving only the original brushes, select the *func_tr
 
 Note that *func_trains* are positioned differently in Neverball than in Quake. Quake ignores the placement of the *func_train* in space and requires an origin specification. Neverball simply uses the location of the first *path_corner* to define the origin. When creating a moving object, just place it at the beginning of its path and everything should work out.
 
+*func_train* is a [body](#bodies).
+
 ## target_teleporter
 
 The *target_teleporter* entity defines a teleporter.
@@ -134,6 +136,8 @@ model | Filename of the model relative to the data directory.
 
 The model must be in OBJ format. It must have triangular tesselation. All vertices must have normals and texture coordinates. A 3D modeller such as Blender or Wings3D may be used to create and export OBJ models.
 
+*misc_model* is a [body](#bodies).
+
 ## worldspawn
 
 The *worldspawn* entity defines most static level geometry and fully defines a level through its attributes.
@@ -158,6 +162,16 @@ par     | Neverputt: the number of strokes required to complete the hole.
 
 For portability, all filenames should use the "/" (forward slash) character as the directory separator.
 
+*worldspawn* is a [body](#bodies).
+
 ## info_null
 
 The *info_null* entity defines an animated billboard. Billboards are fundamental in the creation of backgrounds and ball skins, and are used to add visual details to a level. A description of *info_null* is available in the [background documentation](Backgrounds.md).
+
+## Bodies
+
+Internally the *misc_model*, *func_train* and *worldspawn* entities are represented in the same way and are called "bodies".
+
+A body can follow a path like a *func_train* and can have a detail model attached to it like a *misc_model*.
+
+A body that imports a detail model can have a "material" attribute set on it. A detail model that does not define its own materials will use the material given in this attribute. For example, a number of .map files that define ball geometry import the generic basic-ball.obj model and each sets a different material to import it with.
