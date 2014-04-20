@@ -24,7 +24,7 @@ The *info_player_deathmatch* entity defines a goal.
 
 Key    | Description
 -------|------------
-radius | Goal radius in meters. The default radius is "0.75".
+radius | Goal radius in meters. The default radius is "0.75". In Neverputt, this is usually set to "0.1375".
 
 ## light
 
