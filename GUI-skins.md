@@ -18,7 +18,7 @@ The `plain` images are used by non-interactive and non-selected GUI elements, wh
 
 ##GUI Description
 
-The way in which the above images are displayed on UI elements is controlled with `gui/desc.txt`, a text based file containing two directives, `slice` and `scale`.
+The way in which the above images are displayed on UI elements is controlled with `gui/theme.txt`, a text based file containing two directives, `slice` and `scale`.
 
 ```
 slice 0.25 0.25 0.25 0.25
@@ -31,4 +31,4 @@ The `scale` directive defines how large the border should be using four paramete
 
 ##Distribution
 
-As with other assets, GUI skins may be distributable as a compressed .zip file which can be placed in the user's [`$NEVERBALL_HOME`](Paths.md) folder.
+As with other assets, GUI skins may be distributable as a compressed .zip file which can be placed in the user's [`NEVERBALL_HOME`](Paths.md) folder.
