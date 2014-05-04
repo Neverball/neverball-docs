@@ -4,6 +4,8 @@ Neverball features a themeable GUI, which allows designers to give custom look a
 
 The default Neverball GUI theme can be found in `data/gui/classic`.
 
+Theme selection is controlled by the `theme` option in the `neverballrc` configuration file.
+
 ## Images
 
 Backgrounds for GUI elements are defined by four images, each representing a GUI state.
