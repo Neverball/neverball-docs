@@ -136,6 +136,8 @@ model | Filename of the model relative to the data directory.
 
 The model must be in OBJ format. It must have triangular tesselation. All vertices must have normals and texture coordinates. A 3D modeller such as Blender or Wings3D may be used to create and export OBJ models.
 
+See the note on [scale and coordinate systems][scale].
+
 *misc_model* is a [body](#bodies).
 
 ## worldspawn
@@ -175,3 +177,12 @@ Internally the *misc_model*, *func_train* and *worldspawn* entities are represen
 A body can follow a path like a *func_train* and can have a detail model attached to it like a *misc_model*.
 
 A body that imports a detail model can have a "material" attribute set on it. A detail model that does not define its own materials will use the material given in this attribute. For example, a number of .map files that define ball geometry import the generic basic-ball.obj model and each sets a different material to import it with.
+
+## Scale and coordinate systems
+[scale]: #scale-and-coordinate-systems
+
+Neverball uses the standard OpenGL coordinate system: X points left, Y points up, and Z points backwards / towards the viewer. Radiant uses a different coordinate system: X points left, Y points forward and Z points up.
+
+Additionally, 64 Radiant units correspond to 1 Neverball unit (conventionally called a meter).
+
+*mapc* converts between these coordinate systems and units, so normally you don't have to think about this, with one exception: OBJ models use Neverball units and coordinate system. For example, *zrail2.obj* is a 2 units long railing along the Z axis in Neverball. However, when you import the model as a *misc_model* in Radiant, it will be displayed with the wrong scale and orientation. This makes it hard to work with, so here's a workaround: in Radiant, set "modelscale" to "64" and "angles" to "0 0 90" on the *misc_model* entity. *mapc* will ignore these, while Radiant can use them to display the model properly.
