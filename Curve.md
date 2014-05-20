@@ -14,7 +14,7 @@
 [`<h>`][h]
 [`<ct>`][ct]
 
-Curve is a program designed to create rounded structures which can be imported directly into Radiant. These structures are aligned to the 1-unit grid, as that is the Neverball standard.
+Curve is a program designed to create rounded structures which can be imported directly into Radiant. The curve tool is available in the offical Windows download as `curve.exe`. An [online version](http://bilious.alt.org/~paxed/curve.js/) has been created by [@paxed](https://github.com/paxed/curve.js).
 
 ## Methods of Usage
 
