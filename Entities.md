@@ -148,8 +148,8 @@ Key     | Description
 --------|------------
 message | Intro text that appears as a level begins. A "\" (backslash) character starts a new line. Limited space is available. Wrapping text within the intro text box is often a process of trial and error.
 back    | Path to the background file.
-grad    | Path to the background gradient image.
-song    | Path to the background music file.
+grad    | Path to the background gradient image. Also valid in Neverputt.
+song    | Path to the background music file. Also valid in Neverputt.
 shot    | Path to the level shot file.
 goal    | Number of coins required to unlock the goal.
 time    | Level time limit in hundredths of a second.
@@ -159,8 +159,8 @@ coin_hs | Default values for Most Coins highscore, in order: Hard, Medium, and E
 version | Level version. It is specified as "X.Y", where X is incremented every time the level is changed in a way that breaks existing replays, and Y is incremented for all other changes.
 author  | Author's name
 bonus   | Marks the level as a bonus level.
-idle    | Neverputt: time to wait after the ball has stopped before starting the next shot. This is useful if you have moving objects that may hit the ball while the player is making the shot.
-par     | Neverputt: the number of strokes required to complete the hole.
+idle    | Neverputt: Time to wait after the ball has stopped before starting the next shot. This is useful if you have moving objects that may hit the ball while the player is making the shot.
+par     | Neverputt: The number of strokes required to complete the hole.
 
 For portability, all filenames should use the "/" (forward slash) character as the directory separator.
 
