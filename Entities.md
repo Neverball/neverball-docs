@@ -40,7 +40,7 @@ Consider the radius of your ball and place coins within reach from the floor.
 
 The *item_health_small* entity defines a "shrink" item.
 
-##item_health_large
+## item_health_large
 
 The *item_health_large* entity defines a "grow" item.
 
