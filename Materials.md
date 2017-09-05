@@ -12,7 +12,7 @@ ambient   0.2 0.2 0.2 1.0
 specular  0.0 0.0 0.0 1.0
 emissive  0.0 0.0 0.0 1.0
 shininess 0.0
-flags     shadowed 
+flags     shadowed lit
 angle     45.0
 ```
 
@@ -26,7 +26,7 @@ Those directives define the material in terms of the standard OpenGL material mo
 * `emissive` gives the emissive material color. This color contributes to the appearance of the object regardless of the light falling upon it. A bright color here will make an object appear to glow in darkness, or at least appear to be unaffected by external light. 
 * `shininess` gives the material shininess. Simply put, it defines the size of the specularity on an object. 0 will produce a dull finish, while 128 will produce a very tight specularity. 
 
-The five of these together determine the base color of the material. This base color is then blended with (added to) the texture color.
+The five of these together determine the base color of the material. This base color is then blended with (added to) the texture color. To disable lighting computation for a given material (e.g., for a billboard material), omit the `lit` material flag, in which case the above values have no effect.
 
 * `flags` gives the material flags. Multiple flags may be specified, separated by spaces. The recognized material flags are enumerated below.
 * `angle` gives the cutoff angle for lump smoothing. Surfaces of the same material that share an edge with a crease angle below this value will have their surface normals adjusted for lighting computations, making the surface transition appear smoother. A value of 0 will disable lump smoothing.
@@ -46,3 +46,4 @@ Flag          | Description
 `transparent` | Transparent or translucent material
 `two-sided`   | Two-sided material visible from behind
 `particle`    | Meshes using materials of this type are rendered as a series of point sprites
+`lit`         | Enable lighting for this material
