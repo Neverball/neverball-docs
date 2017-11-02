@@ -1,8 +1,8 @@
-#Editing Recommendations
+# Editing Recommendations
 
 There is a lot more to a Neverball map than a collection of lumps and entities. The quirks and details of Neverball mapping are not obvious. They are generally only learned through experience. Many players have submitted maps, and pretty much everyone consistently makes the same mistakes. The following sections describe these mistakes, and lay down guidelines that should be followed during map creation. These are what separate a good map from a bad map.
 
-##Physics
+## Physics
 
 The Neverball physics engine can take pretty much anything you throw at it without breaking down, but there are a few problem areas.
 
@@ -24,7 +24,7 @@ Finally, try to keep your lump counts in a reasonable range. In the mapc output,
        1    18     1     1     0     0     1    84  4286   115
 A map with many lumps requires greater processing power in-game. If a map has too many lumps, then players with older hardware will not be able to play it. In the default map set, the most complex level has 585 structural lumps. This is probably too many. Try to keep it under 500.
 
-##Z-Fighting
+## Z-Fighting
 
 Z-Fighting is one of the most basic mistakes you can make, yet people do it all the time. It occurs when two textured surfaces coincide. The Z-buffer usually indicates which surface is in front, and allows only that one to be visible. However, when surfaces coincide, numerical precision errors crop up. The answer to the question “Who is in front?” is not guaranteed to be consistent across the entire surface.
 
@@ -32,7 +32,7 @@ Z-Fighting is one of the most basic mistakes you can make, yet people do it all 
 
 Here, the top surfaces of the green and grey lumps are coincident.
 
-##T-Intersections
+## T-Intersections
 
 T-intersections are another really common mistake. The meaning of the term “T-intersection” should be pretty obvious from the image below. It is an instance where a vertex of one lump falls along the edge of another lump.
 
@@ -44,7 +44,7 @@ Ensuring that a map has no T-intersections often requires planning and forethoug
 
 This is a surface with 3 textures. First with a T-intersection, second with the T-intersection removed.
 
-##"Caulking"
+## "Caulking"
 
 Quake engine mappers are certainly aware of the notion of caulking. Caulking involves marking the surfaces that the user will never see as invisible. In normal Quake editing, this is done by setting the surface texture to a bright pink texture named “caulk”. In Neverball, we use a white grid texture called “invisible”.
 
@@ -56,7 +56,7 @@ In fact, the author starts out by selecting ALL lumps and applying the invisible
 
 Here, the near side of the green lump is caulked, because the grey lump prevents it from ever being seen.
 
-##Detail Lumps
+## Detail Lumps
 
 There are many occasions where the mapper may want to define geometry that be seen, but that does not affect the ball. This is called detail geometry.
 
@@ -64,7 +64,7 @@ Detail lumps have two major uses. One is the application of decal textures, disc
 
 Lumps may be marked as detail by selecting the “Selection / Make Detail” menu option in radiant. Detail lumps are returned to normal with “Selection / Make Structural”.
 
-##Decals
+## Decals
 
 There are a number of occasions where you'll want to apply one texture over-top another. Examples include goals, jumps, switches, and arrows. It's common to have a goal texture appearing in green turf, or red turf, etc, but it is inefficient to use a different texture map for each ground/decal combination.
 
@@ -78,7 +78,7 @@ It is convenient to position the decal lump 1 unit above the base lump for purpo
 
 This is a decal lump by itself, and the same decal lump with the surface lump to which it is applied (offset 1 unit for visibility).
 
-##Mitering
+## Mitering
 
 Mitering is a common technique for joining lumps at corners. It simply involves cutting lumps at 45 degree angles, as in a wooden picture frame. It has the effect of reducing T-intersections, while minimizing lump counts.
 
@@ -94,7 +94,7 @@ This is our desired texture layout, a large diamond surrounded by small diamonds
 
 The unmitered map uses 9 lumps, while the mitered map yields the exact same texture layout using only 5 lumps.
 
-##Trimming
+## Trimming
 
 Interesting texturing is important to the overall visual appeal of a level, and it doesn't really take much effort or thought at all. New mappers often think more about their geometry than their textures. They design a level and just plunk down some arbitrary materials. It looks like this:
 
@@ -110,7 +110,7 @@ Better yet, invest a few extra lumps trimming your surfaces. Each of the default
 
 The visual impact there is not of a green object, but of a stone or concrete object with turf applied to the top.
 
-##Coin Padding
+## Coin Padding
 
 A coin pad is a special surface texture that indicates the presence of a coin. Coin pads are not absolutely necessary, but they add a great deal of variety and visual appeal, and they contribute strongly to the appearance of polish and finish in a level.
 
@@ -120,7 +120,7 @@ Coin padding will almost certainly increase the complexity of the layout of a su
 
 ![](img/pad2.png)
 
-##Texture alignment and sizing
+## Texture alignment and sizing
 
 The size and tile pattern of each texture implies a default placement and a style of usage. The implied usage of each texture should be recognized and exploited at every opportunity.
 
@@ -142,7 +142,7 @@ Here, a 2-meter object is aligned to the 1-meter grid. The texture lays naturall
 
 A user playing the game will probably not notice the difference if a platform is 2 meters wide instead of 1.8 meters wide. However, he WILL notice if a texture does not line up properly with its neighbors.
 
-##Reflective surfaces
+## Reflective surfaces
 
 Neverball supports a very limited form of reflective surface. A reflective surface must be defined with two properties. First, the surface must have a reflective material type, as defined in the material file. Second, the surface must be flat with a Z value of 0.
 
@@ -150,7 +150,7 @@ This means that reflection is limited to shiny flat floors. There can be no upri
 
 Mappers should keep in mind that heavy use of mirrors can kill performance on weaker hardware. However, the author doesn't give a damn. That's why he implemented the option to turn reflection off. All you crybabies can go buy a better video board.
 
-##Transparent surfaces
+## Transparent surfaces
 
 Neverball is capable of correctly drawing transparent surfaces in most contexts. It does sort transparent objects correctly with respect to opaque objects. However, it does NOT sort transparent objects with respect to other transparent objects.
 
@@ -158,6 +158,6 @@ This means that if one is looking through a pane of glass at a wall then the wal
 
 Mappers are advised to keep transparent objects to a minimum in order to avoid the inconsistencies that can result. It should be noted however that Mehdi flagrantly violates this rule in nearly every level he makes, and the author doesn't mind too much.
 
-##Curves
+## Curves
 
 Neverball does not have any explicit support for curved surfaces. All of the curves in the default level set are made up of a large number of small planar lumps generated by the curve program.
