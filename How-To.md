@@ -1,11 +1,11 @@
-#Level Creation Howto
+# Level Creation Howto
 
-##Requirements
+## Requirements
 
   * Neverball installation
   * **Radiant**, the level design tool. Recommended: [NetRadiant](http://ingar.satgnu.net/gtkradiant/)
 
-##Quake mapping / Neverball mapping
+## Quake mapping / Neverball mapping
 
 For those familiar with Quake engine mapping, go ahead and forget most of it. Neverball mapping has significantly fewer restrictions than Quake mapping. 
 
@@ -19,11 +19,11 @@ Some important differences are as follows:
   * Most of Quake's entities are meaningless in Neverball. A few of them are used, but in modified form. See [Entities](Entities.md). 
   * No lights. All lighting is dynamic.
 
-##Creating Brushes
+## Creating Brushes
 
 Brushes are handled primarily with the mouse buttons, see below in the [Shortcuts](#shortcuts) section. Create rectangular brushes (blocks) by dragging the mouse. When you create a brush, it's initially 6 sided. In the "Brush" menu, you can change it into a prism, sphere or cone.
 
-##Editing Brushes
+## Editing Brushes
 
 Reshape brushes (blocks) with the clipper tool (xyz icon). This truncates brushes, helpful when forming non-rectangular shapes.
 
@@ -44,7 +44,7 @@ One may also substract, but exercise caution with this feature as it can do stra
 
 Please refer to the [Editing recommendations](Editing.md) for instructions on what **NOT TO DO!** and advanced techniques.
 
-##Textures
+## Textures
 
 Apply textures to brush faces (only visible surfaces need textures, all other surfaces should have the invisible texture applied - (appears as white with green and red stripes in Radiant).
 
@@ -66,7 +66,7 @@ It is recommended to align brushes to the grid for easier texture placement. See
 
 See [Adding Material](Material.md) section if you want create new textures.
 
-##Entities
+## Entities
 
 Create [entities](Entities.md) with a right click in the desired location, then select the entity name from the contextual menu.
 
@@ -75,31 +75,31 @@ Press `N` to open the entities menu, and set up your entity; to add a key, type 
 All brushes are entities of classname "worldspawn".
 
 
-##<a name="shortcuts"></a>Shortcuts
+## <a name="shortcuts"></a>Shortcuts
 
-###3-Button Wheel Mouse
+### 3-Button Wheel Mouse
 
-####Left Mouse Button
+#### Left Mouse Button
 
 The left mouse button is used to manipulate brushes. A single click does nothing...
   * _If you click in empty space in a 2D view and nothing is selected:_  dragging the mouse creates a brush (6 sides).
   * _If you click inside a selected brush:_  dragging the mouse moves the brush.
   * _If you click outside a selected brush:_  dragging the mouse resizes the selected brush.
 
-####Right Mouse Button
+#### Right Mouse Button
 
   * _If you click in a 2D view:_  drag mouse to pan the view.
   * _If you click in a 3D view:_  a single click puts you in "navigation mode". Turn view with the mouse, and move in/out with mouse wheel and arrows, right click again to exit this mode.
 
-####Middle Mouse Button
+#### Middle Mouse Button
 
   * _If you cilck in a 2D view:_  dragging the mouse moves the camera direction (not very usefull).
 
-####Mouse Wheel
+#### Mouse Wheel
 
   * In all views it zooms in & out.
 
-###Keyboard
+### Keyboard
 
 There are many shortcuts, a few important ones:
 
@@ -115,7 +115,7 @@ There are many shortcuts, a few important ones:
 | `Backspace` | delete the selected brush(es) |
 | `Ctrl` + `G` | snap to grid |
 
-###Keyboard + Mouse
+### Keyboard + Mouse
 
 | Keys | Action |
 | :---- | :------ |
@@ -126,7 +126,7 @@ There are many shortcuts, a few important ones:
 
 You can also have a look at the original radiant [command reference](http://web.archive.org/web/20090620063403/http://zerowing.idsoftware.com/files/radiant/docs/1.5/commands.html) or [Shortcut keys and mouse functions of GTKRadiant](http://icculus.org/gtkradiant/documentation/q3radiant_manual/appndx/sskey_dl.htm)
 
-##Compiling maps
+## Compiling maps
 
 Assume the map is named funkyball.map. Process it into a .sol with the following command. The first item specified is the input .map from Radiant, the second gives the location of the mtrl directory.
 
@@ -139,7 +139,7 @@ Assume the map is named funkyball.map. Process it into a .sol with the following
     body  coin  goal  view  jump  swch  ball  char  indx
     1    18     1     1     0     0     1    84  4286   115
 
-##Adding maps to Neverball
+## Adding maps to Neverball
 
 Neverball levels are organized into sets which are defined in .txt files in the "data/" directory. These text files are a bit complex, so take example on the existing files of the initial sets. Any files referenced in these text files must reside in the "data/" diretory. The main directories in "data" are by convention:
 
@@ -155,11 +155,11 @@ Neverball levels are organized into sets which are defined in .txt files in the 
     |
     +--- shot-name_of_the_set/     (screenshots)
 
-###Set File
+### Set File
 
 The set file works differently in 1.5.4 and later than in earlier versions.
 
-####For 1.5.4
+#### For 1.5.4
 
 You have a file called "sets.txt". It may be referred to as the "master set file" as it links to all the other sets.
 
@@ -174,7 +174,7 @@ The format for each set file is as follows:
 
 Subsequent lines are following by a link to each level using the full name relative to the _data_ directory.
 
-###Level shots
+### Level shots
 
 A level shot is a screen-shot of a level without the ball or any coins visible. It is used to preview a level in the level selection screen. There are two ways to acquire a level shot: per level, and per set.
 
