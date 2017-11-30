@@ -12,4 +12,4 @@ Here's a quick guide on setting up everything you need to start making levels.
 To confirm that things are working, at this point you can hit *Ctrl+S* to save the (currently empty) map. Make sure to save it under `Documents\My Games\Neverball\`, for instance, as `Documents\My Games\Neverball\Maps\empty.map`. Then, in the *Build* menu, select *Neverball: compile+play*. Ignore any firewall and BSP monitoring warnings. Neverball should launch and you should arrive at a black screen that says *Standalone level*, which is your completely empty map. If you get this far, everything is set up properly and you're ready to start mapping.
 
 [neverball]: http://neverball.org/download.php
-[radiant]: http://ingar.satgnu.net/gtkradiant/
+[radiant]: http://ingar.intranifty.net/gtkradiant/
