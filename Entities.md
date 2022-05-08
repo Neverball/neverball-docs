@@ -36,6 +36,14 @@ light  | Value of the coin. Neverball draws coins in denominations of 1, 5, and 
 
 Consider the radius of your ball and place coins within reach from the floor.
 
+## item_clock
+
+The *item_clock* entity defines a "clock" item.
+
+Key    | Description
+-------|------------
+light  | Value of the clock. Neverball draws clocks in denominations of 5, 15, and 30. All units are in seconds.
+
 ## item_health_small
 
 The *item_health_small* entity defines a "shrink" item.
